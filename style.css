@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Gantari:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Gantari', sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* HEADER */
+.cabecalho, .rodape {
+    background-color: #FFC0CB;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.cabecalho__logo {
+    height: 80px;
+}
+
+/* MAIN */
+.conteudo {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* SEÇÃO DE PRODUTOS */
+.conteudo__produtos, .conteudo__adicionar {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    width: 48%;
+    height: 60vh; 
+    display: flex;
+    flex-direction: column;
+}
+
+.conteudo__produtos__titulo, .conteudo__adicionar__titulo {
+    text-align: center;
+}
+
+.conteudo__produtos {
+    overflow-y: auto; 
+}
+
+/* Cartões */
+.conteudo__produtos__cartoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch; 
+    margin-top: 20px;
+}
+
+.cartao {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px; 
+    padding: 10px;
+    text-align: center;
+}
+
+.cartao img {
+    max-width: 100%;
+    height: auto;
+}
+
+.cartaoInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding: 5px;
+}
+
+.cartaoInfo__valor {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: auto; 
+}
+
+.cartaoInfo__nome {
+    color: black;
+    font-weight: bold;
+}
+
+.cartaoInfo__valor__preco {
+    color: #FF00FF;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.cartaoInfo__valor__botaoDeletar {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.cartaoInfo__valor__botaoDeletar img {
+    width: 20px;
+    height: 20px;
+}
+
+/* FORMULÁRIO */
+.formulario__label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+.formulario__input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #FFC0CB;
+    border-radius: 5px;
+    outline: none;
+}
+
+.formulario__botoes {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.formulario__botao {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #fff;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.formulario__botao--adicionar {
+    background-color: #FF00FF;
+}
+
+.formulario__botao--adicionar:hover {
+    background-color: #FF69B4;
+    transform: scale(1.05);
+}
+
+.formulario__botao--limpar {
+    background-color: #BA55D3;
+}
+
+.formulario__botao--limpar:hover {
+    background-color: #9370DB;
+    transform: scale(1.05);
+}
+
+/* MEDIA QUERIES */
+
+/* Para smartphones */
+@media (max-width: 768px) {
+    .conteudo {
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+
+    .conteudo__produtos, .conteudo__adicionar {
+        width: 100%;
+        height: auto;
+    }
+
+    .conteudo__produtos__cartoes {
+        flex-wrap: wrap; 
+        gap: 10px;
+        justify-content: space-between;
+    }
+
+    .cartao {
+        width: calc(50% - 10px); 
+        flex-basis: calc(50% - 10px);
+        height: auto;
+        margin-bottom: 10px;
+    }
+}
+
+/* Para tablets */
+@media (max-width: 1024px) {
+    .conteudo {
+        flex-direction: column-reverse;
+    }
+
+    .conteudo__produtos, .conteudo__adicionar {
+        width: 100%;
+    }
+
+    .conteudo__produtos__cartoes {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .cartao {
+        width: calc(33.33% - 20px); 
+    }
+}
+
+/* Para desktop */
+@media (min-width: 1025px) {
+    .conteudo {
+        flex-direction: row;
+    }
+
+    .conteudo__produtos, .conteudo__adicionar {
+        width: 48%;
+    }
+
+    .conteudo__produtos__cartoes {
+        flex-direction: row;
+    }
+
+    .cartao {
+        width: calc(33.33% - 20px);
+    }
+}

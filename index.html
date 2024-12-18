@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doce Sabor Confeitaria</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="cabecalho">
+        <img class="cabecalho__logo" src="./imagens/logo.png" alt="Logo da confeitaria">
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="conteudo">
+        <!-- Seção de Produtos -->
+        <section class="conteudo__produtos">
+            <h2 class="conteudo__produtos__titulo">Lista de Produtos</h2>
+            <div class="conteudo__produtos__cartoes" data-produto>
+                <!-- Cartões renderizados pela API -->
+            </div>
+        </section>
+
+        <!-- Seção de Adicionar Produtos -->
+        <section class="conteudo__adicionar">
+            <h2 class="conteudo__adicionar__titulo">Adicionar Produtos</h2>
+            <form class="conteudo__adicionar__formulario" data-form autocomplete="off">
+                <label class="formulario__label" for="nome">Nome:</label>
+                <input class="formulario__input" id="nome" data-nome placeholder="Ex: Bolo de Chocolate" type="text">
+
+                <label class="formulario__label" for="preco">Preço:</label>
+                <input class="formulario__input" id="preco" data-preco placeholder="Ex: 10,50" type="text">
+
+                <label class="formulario__label" for="imagem">Imagem (URL):</label>
+                <input class="formulario__input" id="imagem" data-imagem placeholder="Ex: https://..." type="text">
+
+                <div class="formulario__botoes">
+                    <button type="submit" class="formulario__botao formulario__botao--adicionar">Adicionar</button>
+                    <button type="reset" class="formulario__botao formulario__botao--limpar">Limpar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="rodape">
+        <img class="rodape__logo" src="./imagens/logo.png" alt="Logo da confeitaria">
+        <p class="rodape__texto">© Desenvolvido por Caroline Fraga</p>
+    </footer>
+
+    <script type="module" src="js/controladores/main.js"></script>
+</body>
+</html>
